@@ -1,31 +1,38 @@
+<?php 
 
-<?php
-//allow the config
- define('_CONFIG_',true);
- //require the config
- require_once "inc/config.php";
-define('_allowfooter_',true);
+	// Allow the config
+	define('_CONFIG_', true);
+	// Require the config
+	require_once "inc/config.php"; 
+
 ?>
 <!DOCTYPE html>
-<html>
-<head>
-<!-- UIkit CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="follow">
 
-	
-</head>
-<body>
+    <title>Page Title</title>
 
-<?php
-echo "hello world.today is:";
-$time=time();
-$time+=19800;
-echo date("M d Y,g:i a",$time);
-echo "<br />";
-?>
-<p>
- <a href="login.php">login</a><br />
- <a href="registration.php">registration</a>
-</p>
-</body>
+    <base href="/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.24/css/uikit.min.css" />
+  </head>
+
+  <body>
+
+  	<div class="uk-section uk-container">
+  		<?php 
+  			echo "Hello world. Today is: ";
+  			echo date("Y m d");
+  		?> 
+  		<p>
+  			<a href="php_login_course/login.php">Login</a>
+  			<a href="php_login_course/registration.php">Register</a>
+  		</p>
+  	</div>
+
+  	<?php require_once "inc/footer.php"; ?> 
+  </body>
 </html>
