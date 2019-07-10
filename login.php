@@ -39,7 +39,7 @@
                 <div class="uk-margin">
                     <label class="uk-form-label" for="form-stacked-text">Password</label>
                     <div class="uk-form-controls">
-                        <input class="uk-input" id="form-stacked-text" type="password" required='required' placeholder="Your Password">
+                        <input class="uk-input" id="form-stacked-text1" type="password" required='required' placeholder="Your Password">
                     </div>
                 </div>
 

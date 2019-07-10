@@ -1,5 +1,5 @@
 $(document)
-.on("submit", "form.js-register", "form.js-login",function(event) {
+.on("submit", "form.js-register, form.js-login", function(event) {
 	event.preventDefault();
 
 	var _form = $(this);
@@ -22,10 +22,8 @@ $(document)
 		return false;
 	}
 
-	console.log(dataObj);
-     	// Assuming the code gets this far, we can start the ajax process
-	
-_error.hide();
+	// Assuming the code gets this far, we can start the ajax process
+	_error.hide();
 
 	$.ajax({
 		type: 'POST',
@@ -36,20 +34,16 @@ _error.hide();
 	})
 	.done(function ajaxDone(data) {
 		// Whatever data is 
-		
 		if(data.redirect !== undefined) {
-			//window.location = data.redirect;
-		} else if (data.error!==undefined){
+			window.location = data.redirect;
+		} else if(data.error !== undefined) {
 			_error
-			  .text(data.error)
-			  .show();
+				.text(data.error)
+				.show();
 		}
-
-		
 	})
 	.fail(function ajaxFailed(e) {
 		// This failed 
-		console.log(e);
 	})
 	.always(function ajaxAlwaysDoThis(data) {
 		// Always do
@@ -58,7 +52,7 @@ _error.hide();
 
 	return false;
 })
-//
+// 
 .on("submit", "form.js-login", function(event) {
 	event.preventDefault();
 
@@ -82,34 +76,28 @@ _error.hide();
 		return false;
 	}
 
-	console.log(dataObj);
-     	// Assuming the code gets this far, we can start the ajax process
-	
-_error.hide();
+	// Assuming the code gets this far, we can start the ajax process
+	_error.hide();
 
 	$.ajax({
 		type: 'POST',
-		url: (_form.hasClass('js-login') ? 'php_login_course/ajax/login.php','php_login_course/ajax/login.php'),
+		url: 'php_login_course/ajax/login.php',
 		data: dataObj,
 		dataType: 'json',
 		async: true,
 	})
 	.done(function ajaxDone(data) {
 		// Whatever data is 
-		
 		if(data.redirect !== undefined) {
-			//window.location = data.redirect;
-		} else if (data.error!==undefined){
+			window.location = data.redirect;
+		} else if(data.error !== undefined) {
 			_error
-			  .text(data.error)
-			  .show();
+				.html(data.error)
+				.show();
 		}
-
-		
 	})
 	.fail(function ajaxFailed(e) {
 		// This failed 
-		console.log(e);
 	})
 	.always(function ajaxAlwaysDoThis(data) {
 		// Always do
@@ -118,4 +106,3 @@ _error.hide();
 
 	return false;
 })
-
