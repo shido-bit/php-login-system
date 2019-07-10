@@ -15,6 +15,7 @@ if(!isset($_SESSION)) {
 	// Include the DB.php file;
 	include_once "classes/DB.php";
     include_once "classes/filter.php";
+    include_once "function.php";
 	$con = DB::getConnection();
 
 ?>
