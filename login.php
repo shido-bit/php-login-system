@@ -4,7 +4,7 @@
     define('_CONFIG_', true);
     // Require the config
     require_once "inc/config.php"; 
-   forcedashboard();
+   
 ?>
 
 <!DOCTYPE html>
